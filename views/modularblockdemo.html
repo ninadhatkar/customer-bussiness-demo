@@ -1,0 +1,223 @@
+{% extends "./layout/parent.html" %}
+{% block main_body %}
+
+
+
+<div id="myCarousel" class="carousel slide bannner-slider" data-ride="carousel">
+    <!-- Wrapper for slides -->
+   
+    <div class="carousel-inner">
+
+        {% for entry in entry.header %}
+        
+        {% if entry.title_subtitle %}
+        <div class="item  active ">
+            <!--render title subtitle -->
+
+            <img src="{{ entry.title_subtitle.background_image.url }}" alt="Chicago">
+            <div class="slider-section" id="slider-caption">
+                <h1>{{ entry.title_subtitle.title }}</h1>
+                <h2>{{ entry.title_subtitle.subtitle}}</h2>
+                <a href="" target="_entry_header.title_subtitle.cta.open_in_new_tab"></a>
+            </div>
+           
+            <!--Render video-->
+            <!--Render animation-->
+
+        </div>
+        {% endif %}
+
+        {% if entry.video %}
+        <div class="item ">
+            <!--render title subtitle -->
+            <!--Render video-->
+
+            <div class="slider-section">
+                <div class="container">
+                    {{ entry.video.youtube_link }}
+                </div>
+            </div>
+          
+            <!--Render animation-->
+
+        </div>
+        {% endif %}
+
+
+        {% if entry.animation %}
+        <div class="item ">
+            <!--render title subtitle -->
+            <!--Render video-->
+            <!--Render animation-->
+
+            <div class="slider-section slider-animation">
+                <div class="container">
+                    <h1>{{ entry.animation.multiline_text }}.</h1>
+                    <h2>{{ entry.animation.title }}</h2>
+                    <a href="" target=""></a>
+                </div>
+            </div>
+          
+        </div>
+        {% endif %}
+      
+
+
+        {% endfor %}
+    </div>
+   
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+
+    </a>
+</div>
+
+
+
+<section class="wrapper" data-swiftype-index='true'>
+
+    {% for body in entry.body %}
+   
+     {% if body.title_subtitle %}
+    <!-- Title subtitle-->
+    <div class="title_sec">
+        <div class="container">
+            <h1>{{ body.title_subtitle.title }}</h1>
+            <p>{{ body.title_subtitle.subtitle}}</p>
+        </div>
+    </div>
+  {% endif %}
+ 
+    {% if body.gallery %}
+    <!-- gallery-->
+    <div class="gallery">
+        <div class="container">
+            <ul class="gallery-slider">
+                {% for entry in body.gallery.group_multiple %}
+                <li class="item">
+                    <img src="{{ entry.image.url }}">
+                    <div class="our-work-1-overlay" style="background-color: #e9886c">
+                        <p>Click to See More</p>
+                    </div>
+                    <p> {{ entry.caption }} </p>
+                </li>
+                {% endfor %}
+
+            </ul>
+        </div>
+    </div>
+    {% endif %}
+    
+    
+    {% if body.3column %}
+    <!--three column-->
+    <div class="three-column">
+        <div class="container">
+            <ul>
+
+                {% for entry in body.3column.group_multiple %}
+                <li>
+                    <div class="caption">
+                        <h3>{{ entry.title }}</h3>
+                        <p>{{ entry.body }}</p>
+                    </div>
+                    <img src="{{ entry.icon.url }}">
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endif %}
+    
+    
+    {% if body.quote %}
+    <!-- Quote-->
+    <div class="quote testimonials-1">
+        <div class="container">
+
+            <i class="fa fa-comment-o testimonials-1-icon text-color-theme" style="color: #e9886c"></i>
+            <img src="">
+            <h4> {{ body.quote.quote}}</h4>
+            <span class="person_name"> -{{ body.quote.person }}</span>
+            <span class="qut_name"> {{ body.quote.company }} </span>
+            <a href="{{ body.quote.url.href }}">{{ body.quote.url.title }}</a>
+        </div>
+    </div>
+    {% endif %}
+    
+    
+    {% if body.featured_image %}
+    <!--featured image -->
+    <div class="featured_img">
+        <img style="background-color:(url )">
+        <img src="">
+
+    </div>
+    {% endif %}
+    
+    
+    {% if body.video %}
+    <!-- Quote-->
+    <div class="video">
+        <div class="container">
+            <h4>{{ body.video.youtube.title }} </h4>
+            {{ body.video.youtube.href }}
+        </div>
+    </div>
+    {% endif %}
+    
+
+    {% if body.form %}
+    <div class="container registerform">
+        <form action="" class="form" name="registration">
+
+            {% if body.form.first_name_selected %}
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name.."> 
+            {% endif %} 
+
+            {% if body.form.last_name_selected %}
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name.."> 
+            {% endif %} 
+            
+            {% if body.form.company_selected %}
+            <label for="lname">Company</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your company..">
+            {% endif %}
+
+            {% if body.form.phone_selected %}
+            <label for="lname">Phone number</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your phone number..">
+            {% endif %} 
+
+            {% if body.form.city_selected %}
+            <label for="country">City</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your city..">
+            {% endif %}
+
+            {% if body.form.address_selected %}
+            <label for="subject">Address</label>
+            <textarea id="subject" name="subject" placeholder="your address.." style="height:45px"></textarea>
+            {% endif %}
+
+            <input type="submit" value="Submit" class="regiBtn">
+        </form>
+
+        <div class="thankMsg">
+            <span class="close">X</span>
+            <p>Thank you for your submission, we will reach out shortly.</p>
+        </div>
+    </div>
+    {% endif %}
+
+{% endfor %}
+</section>
+
+
+{% endblock %}

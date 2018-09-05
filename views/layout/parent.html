@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+    
+
+    <head>
+        <title>{{ entry.title }}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <!--seo-->
+        <meta name="keywords" content="Home">
+        <meta class="swiftype" name="title" data-type="string" content="{{entry.title}}" />
+        <meta class="swiftype" name="description" data-type="text" content="{{entry.description}}" />
+       
+    
+    
+        <!--seo-->
+        <!--<meta name="description" content="HTML5 &amp; CSS3 Multipurpose Theme">-->
+        <!--<meta name="keywords" content="HTML5, CSS3, Theme">-->
+    
+        <link href="/assets/blt70c84b99a1461902/amp_med.png" rel="icon" type="image/png">
+
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,700,400italic,700italic,900,900italic' rel='stylesheet'
+            type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Bitter:400,400italic,700' rel='stylesheet' type='text/css'>
+        <link href="../static/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="../static/stylesheets/style.css" rel="stylesheet" type="text/css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="../static/stylesheets/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="../static/stylesheets/flexslider.css" rel="stylesheet" type="text/css">
+<!--        <link href="../static/stylesheets/venobox.css" rel="stylesheet" type="text/css">-->
+        <link href="../static/stylesheets/red-theme.css" rel="stylesheet" type="text/css">
+        <link href="../static/stylesheets/main.css" rel="stylesheet" type="text/css">
+        <link type="text/css" rel="stylesheet" href="../static/stylesheets/search.css" media="all" />
+        <link type="text/css" rel="stylesheet" href="../static/stylesheets/autocomplete.css" media="all" />
+    
+    
+        <style type="text/css">
+            #footer-columns-region a,
+            #footer-left-region a {
+                color: #a21c16
+            }
+    
+            #footer-columns-region a:hover,
+            #footer-left-region a:hover {
+                color: #fff;
+            }
+    
+            #contacts-block a,
+            #main-content-region a {
+                color: #e9886c;
+            }
+    
+            
+        </style>
+    
+    
+        <script src="../static/javascripts/jquery-1.10.2.min.js"></script>
+        <script src="../static/javascripts/bootstrap.min.js"></script>
+        <script src="../static/javascripts/jquery.flexverticalcenter.js"></script>
+        <script src="../static/javascripts/jquery.flexslider-min.js"></script>
+        <script src="../static/javascripts/retina-1.1.0.min.js"></script>
+        <script src="../static/javascripts/jquery.stellar.min.js"></script>
+        <script src="../static/javascripts/jquery.mixitup.min.js"></script>
+        <script src="../static/javascripts/venobox.min.js"></script>
+        <script src="../static/javascripts/script.js"></script>
+        <script src="../static/javascripts/contact.js"></script>
+        <script src="../static/javascripts/languages.min.js"></script>
+
+        <script type="text/javascript" src="../static/javascripts/jquery.ba-hashchange.min.js"></script>
+        <script type="text/javascript" src="../static/javascripts/jquery.swiftype.search.js"></script>
+        <script type="text/javascript" src="../static/javascripts/st.custom.search.js"></script>
+        <script type="text/javascript" src="../static/javascripts/jquery.swiftype.autocomplete.js"></script>
+     
+  
+    </head>
+    <body>
+
+        
+        {% include "../partials/header.html" %}
+        
+        
+        {% block main_body %} {% endblock %}
+        
+        
+        {% include "../partials/footer.html" %}
+        
+ 
+    </body>
+</html>

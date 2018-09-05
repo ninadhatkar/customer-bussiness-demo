@@ -1,0 +1,329 @@
+{% extends "./layout/parent.html" %} 
+{% block main_body %}
+
+
+
+
+    <!-- /main-wrapper start-->
+    <div class="main-wrapper">
+       
+
+        <section>
+            <!-- /highlighted-region start-->
+
+            <div id="highlighted-region" class="highlighted text-color-light">
+                <div id="highlighted-slider-1-block" class="highlighted-slider-1 position-relative bg-image-cactus" data-stellar-background-ratio="0.7"
+                    style="background: url('{{entry.banner.background_image.url}}') scroll center no-repeat; background-size: cover;">
+                    <!-- /overlay start-->
+                    <div class="overlay">
+                        <!-- /flex-bullet-slider start-->
+                        <div class="flex-bullet-slider vertical-center text-center">
+                            <div class="container">
+                                <ul class="slides">
+                                    
+                                    {% for entry in entry.banner.content%}
+                                    <li>
+                                        <h1 class="slider-title" style="color: ">{{entry.title}}</h1>
+                                        <p class="slider-description"></p>
+                                        <a href="{{entry.cta.link}}" class="btn btn-default">{{entry.cta.title}}</a>
+                                    </li>
+                                    {% endfor %}
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- /flex-bullet-slider end-->
+                    </div>
+                    <!-- /overlay end-->
+                </div>
+            </div>
+            <!-- /highlighted-region end-->
+
+            <!-- /content-region start-->
+
+            <div id="content-region" class="content region">
+                <!-- /panels-1-block start-->
+                <div id="panels-1-block" class="panels-1 block">
+                    <div class="container">
+                        <div class="row">
+
+                            {% for entry in entry.features %}
+                            <div class="panels-item col-xs-12 col-md-4">
+                                <i class="fa {{entry.font_awesome_class}} text-color-theme" style="color: #e9886c" onMouseOver="this.style.color='#a21c16'"
+                                    onMouseOut="this.style.color='#e9886c'"></i>
+                                <h6 style="color: e9886c">{{ entry.title }}</h6>
+                                <p>{{ entry.description }}</p>
+                            </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /panels-1-block end-->
+            </div>
+            <!-- /content-region end-->
+
+            <!-- content-1-region start-->
+            <div id="content-1-region" class="content-1 region bg-color-grayLight1">
+                <!-- /services-1-block start-->
+                <div id="services-1-block" class="services-1 block">
+                    <div class="container">
+                        <div class="row">
+                            <!-- /services-1-content start-->
+
+                            <div class="services-1-content col-xs-12 col-md-7">
+                                <h2 style="color: ">{{ entry.services.title }}</h2>
+                                <div class="service-content">
+                                    {{ entry.services.content }}
+                                </div>
+                                <!-- /panels-2 start-->
+                                <div class="panels-2">
+                                    <div class="row">
+
+                                        {% for entry in entry.services.service_details %}
+                                        <div class="panels-item col-sm-6">
+                                            <i class="fa {{ entry.font_awesome_class }} text-color-theme" style="color: #e9886c" onMouseOver="this.style.color='#a21c16'"
+                                                onMouseOut="this.style.color='#e9886c'"></i>
+                                            <h6 style="color: e9886c">{{ entry.title }}</h6>
+                                            <p>{{ entry.description }}</p>
+                                        </div>
+                                        {% endfor %}
+
+                                    </div>
+                                </div>
+                                <!-- /panels-2 end-->
+                            </div>
+                            <!-- /services-1-content end-->
+                            <!-- /services-1-image start-->
+                            <div class="services-1-image col-xs-12 col-md-5 text-center">
+                                <img src="{{ entry.services.image.url }}" alt="iPhone" class="img-responsive">
+                            </div>
+                            <!-- /services-1-image end-->
+                        </div>
+                    </div>
+                </div>
+                <!-- /services-1-block end-->
+            </div>
+            <!-- content-1-region end-->
+
+
+            <!-- /content-2-region start-->
+            <div id="content-2-region" class="content-2 region">
+                <!-- /our-work-1-block start-->
+                <div id="our-work-1-block" class="our-work-1 block">
+                    <div class="container">
+                        <h2 style="color: " class="block-title">{{ entry.work.title }}</h2>
+                        <div class="row our-work-1-description">
+                            <div class="col-xs-12 col-md-9">
+                                {{ entry.work.description }}
+                            </div>
+
+                            <div class="col-xs-12 col-md-3 text-left-sm margin-top-sm-30 text-right">
+                                <a href="{{ entry.work.cta.href }}" class="btn btn-primary" style="background-color:#e9886c; border-color:#e9886c; color:#fff "
+                                    onMouseOver="this.style.backgroundColor='#a21c16'" onMouseOut="this.style.backgroundColor='#e9886c'">{{ entry.work.cta.title }}</a>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <!-- /our-work-1-item start-->
+
+                            {% for entry in entry.work.work_details %}
+                            <div class="our-work-1-item col-xs-12 col-sm-4">
+                                <a href="{{ entry.cta.link }}">
+                                    <!-- /our-work-1-image start-->
+                                    <div class="our-work-1-image">
+                                        <img class="img-responsive" src="{{ entry.image.url }}" alt="Portfolio 1" title="Portfolio 1">
+                                        <div class="our-work-1-overlay" style="background-color: #e9886c">
+                                            <p>{{ entry.cta.title }}</p>
+                                        </div>
+                                    </div>
+                                    <!-- /our-work-1-image end-->
+                                </a>
+                                <!-- /our-work-1-item-description start-->
+
+
+                                <div class="our-work-1-item-description">
+                                    <h6 style="color: e9886c">{{ entry.title }}</h6>
+                                    <p class="text-color-theme">
+                                        <small style="color: #777">{{ entry.work.date }}</small>
+                                    </p>
+                                </div>
+                                <!-- /our-work-1-item-description end-->
+                            </div>
+                            {% endfor %}
+                            <!-- /our-work-1-item end-->
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /our-work-1-block end-->
+            </div>
+            <!-- /content-2-region end-->
+
+
+            <!-- /content-3-region start-->
+            <div id="content-3-region" class="content-3 region position-relative bg-image-bench text-color-light" data-stellar-background-ratio="0.7"
+                style="background: url('{{ entry.testimonials.background_image.url }}') scroll center no-repeat; background-size: cover;">
+                <!-- /text-widget-1-block start-->
+                <div id="text-widget-1-block" class="text-widget-1 block">
+                    <div class="overlay">
+                        <!-- /vertical-center start-->
+                        <div class="vertical-center text-center">
+                            <div class="container">  
+                                <h1 class="no-margin" style="color: ">{{ entry.testimonials.title }}</h1>
+                            </div>
+                        </div>
+                        <!-- /vertical-center end-->
+                    </div>
+                </div>
+                <!-- /text-widget-1-block end-->
+            </div>
+            <!-- /content-3-region end-->
+
+
+            <!-- /content-4-region start-->
+            <div id="content-4-region" class="content-4 region bg-color-grayDark2 text-color-light" style="background-color:;">
+                <!-- /testimonials-1-block start-->
+                <div id="testimonials-1-block" class="testimonials-1 block">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-10 col-md-offset-1">
+                                <!-- /flex-bullet-slider start-->
+                                <div class="flex-bullet-slider vertical-center text-center">
+
+                                    <i class="fa fa-comment-o testimonials-1-icon text-color-theme" style="color: #e9886c"></i>
+                                    <ul class="slides">
+                                        {% for entry in entry.testimonials.testimony %}
+                                        <li class="">
+                                            <h4 class="testimonials-1-text lato-font" style="color:;">
+                                                {{ entry.description }}
+                                            </h4>
+                                            <p class="testimonials-1-author text-color-theme" style="color: #777">
+                                                <i>{{ entry.author }}</i>
+                                            </p>
+                                        </li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </div>
+                                <!-- /flex-bullet-slider end-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /testimonials-1-block end-->
+            </div>
+            <!-- /content-4-region end-->
+
+
+            <!-- /content-5-region start-->
+            <div id="content-5-region" class="content-5 region bg-color-theme text-color-light" style="background-color:#e9886c" style="background-color:;">
+                <!-- /call-to-action-1-block start-->
+                <div id="call-to-action-1-block" class="call-to-action-1 block">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 text-center">
+                                <h4 class="call-to-action-1-text" style="color:;">{{ entry.purchase.title }}</h4>
+                                <a href="{{ entry.purchase.cta.link }}" class="call-to-action-1-button btn btn-default">{{ entry.purchase.cta.title }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /call-to-action-1-block end-->
+            </div>
+            <!-- /content-5-region end-->
+
+
+            <!-- /content-6-region start-->
+            <div id="content-6-region" class="content-6 region bg-color-grayLight1">
+                <!-- /text-accordions-block start-->
+                <div id="text-accordions-block" class="text-accordions block ul-chk-style">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6">
+                                <h5 style="color: ">{{ entry.support.features.title }}</h5>
+                                <p>
+                                   {{ entry.support.features.description }}
+                                </p>
+                            </div>
+                            <div class="col-xs-12 col-md-6 margin-top-sm-40">
+                                <!-- Accordions start-->
+                                <!-- /panel-group start-->
+                                <div class="panel-group" id="accordion2">
+
+                                    <!-- /panel start-->
+                                    {% for entry in  entry.support.collapsible_group %}
+                                    <div class="panel panel-primary">
+                                            <div class="panel-heading" style="border-color: #e9886c">
+                                                <a style="color: #e9886c"  data-toggle="collapse" data-parent="#accordion2" href="#collapse{{ loop.index }}">
+                                                   {{ entry.title }}
+                                                </a>
+                                            </div>
+                                            <div id="collapse{{ loop.index }}" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                   {{ entry.content }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+							<!-- /panel end-->
+							
+						
+						        </div>
+						<!-- /panel-group end-->
+						<!-- /Accordions end-->
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!-- /text-accordions-block end-->
+	</div>
+	<!-- /content-6-region end-->
+
+
+	<!-- /content-7-region start-->
+
+	<div id="content-7-region " class="content-7 region ">
+		<!-- /company-description-block start-->
+		<div id="company-description-block " class="company-description block ">
+			<div class="container ">
+				<div class="row ">
+					<div class="col-xs-12 col-md-8 col-md-offset-2 text-center ">
+						<h2 style="color: ">{{ entry.year_stats.title }}</h2>
+						<p>{{ entry.year_stats.description }}</p>
+					</div>
+				</div>
+				<div class="row ">
+					<div class="col-xs-12 company-description-image text-center ">
+						<img src="{{ entry.year_stats.image.url }}" class="img-responsive " alt="Company Description " title="Company
+                                                Description ">
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /company-description-block end-->
+	</div>
+	<!-- /content-7-region end-->
+
+</section>
+
+
+
+
+
+</div>
+<!-- /main-wrapper end-->
+
+<!-- /Back-to-top start-->
+<div id="back-to-top " class="go-to-top  ">
+    <i class="fa fa-angle-up " aria-hidden="true "></i>
+</div>
+<!-- /Back-to-top end-->
+
+
+
+
+
+{% endblock %}
